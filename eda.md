@@ -268,12 +268,73 @@ plt.show()
 
 #### _Correlation_
 
-_Correlation_ adalah 
+_Correlation_ adalah sebuah ukuran ketergantungan antara variabel. _Causation_
+adalah hubungan sebab-akibat antara dua variabel. _Correlation_ tidak
+mendeskripsikan sebab-akibat dalam dataset. Menentukan _causation_ lebih
+sulit dibandingkan dengan menentukan _correlation_, karena membutuhkan
+analisis lebih lanjut.
+
+Pada _method_ `corr` pada _library pandas_, metode yang digunakan adalah
+_Pearson correlation_. _Pearson correlation_ dapat menentukan korelasi linier
+antara dua variabel. Nilai p-value dapat digunakan untuk menentukan signifikansi
+statistik dari nilai korelasi yang didapat. Contoh: tingkat signifikansi 0,05
+menandakan bahwa 95% korelasi antar variabel adalah signifikan secara statistik.
+
+Konvensi umum mengenai nilai p-value adalah sebagai berikut:
+
+- nilai p adalah $\le$ 0,001: kami katakan ada bukti kuat bahwa korelasinya signifikan.
+- nilai p adalah $\le$ 0,05: terdapat bukti moderat bahwa korelasi tersebut signifikan.
+- nilai p adalah $\le$ 0,1: ada bukti lemah bahwa korelasinya signifikan.
+- nilai p adalah $\gt$ 0,1: tidak ada bukti bahwa korelasi tersebut signifikan.
+
+Berikut adalah contoh penghitungan _correlation_ antara variabel dalam dataset.
+Variabel yang dengan korelasi tertinggi adalah Parch vs. SibSp dengan nilai
+korelasi 0.55.
+
+```py
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load Titanic dataset
+url = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+df = pd.read_csv(url)
+
+# Compute the correlation matrix
+corr = df[['Age', 'Fare', 'Pclass', 'SibSp', 'Parch', 'Survived']].corr()
+
+# Find the most correlated pair
+# Drop diagonal values by setting them to NaN
+corr_no_diag = corr.copy()
+for i in range(len(corr_no_diag)):
+    corr_no_diag.iloc[i, i] = None
+
+# Find the maximum correlation value and its indices
+max_corr = corr_no_diag.abs().max().max()
+max_corr_pair = corr_no_diag.stack().idxmax()
+
+print(f"Most correlated variables: {max_corr_pair} with a correlation of {max_corr:.2f}")
+
+# Create regression plot for the most correlated pair
+x_var, y_var = max_corr_pair
+
+plt.figure(figsize=(10, 6))
+sns.regplot(x=x_var, y=y_var, data=df, scatter_kws={'alpha':0.5}, line_kws={'color':'red'})
+plt.title(f'Regression Plot of {x_var} vs {y_var}')
+plt.xlabel(x_var)
+plt.ylabel(y_var)
+plt.grid(True)
+plt.show()
+```
+
+![Correlation](img/corr.png)
 
 #### _Descriptive Statistics_
 
 
+
 #### _Grouping (Pivot)_
+
 
 
 #### ANOVA
@@ -281,6 +342,8 @@ _Correlation_ adalah
 
 
 ### Interpolasi dan Ekstrapolasi Data
+
+
 
 ## Referensi
 
