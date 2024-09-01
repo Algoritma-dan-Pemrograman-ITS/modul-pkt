@@ -11,10 +11,10 @@ sifatnya yang mudah untuk dibaca dan di-program. Selain itu, pilihan
 _library_ yang luas juga menjadi daya tarik tambahan.
 
 _Library-library_ yang seringkali digunakan untuk melakukan visualisasi
-data yaitu _pandas_, _numpy_, _matplotlib_, dan _seaborn_.
+data yaitu _pandas_, _numpy_, _scipy_, _matplotlib_, dan _seaborn_.
 _Library pandas_ menyediakan fitur _data frame_ yang bisa menampung dan
 melakukan operasi-operasi kepada data yang ditampung di dalamnya.
-_Library numpy_ menyediakan fitur-fitur matematika yang banyak digunakan
+_Library numpy_ dan _scipy_ menyediakan fitur-fitur matematika yang banyak digunakan
 oleh _library library_ lainnya.
 _Library matplotlib_ menyediakan fitur-fitur untuk menggambarkan grafik
 dan plot data yang bisa mengubah tampilan data menjadi berbentuk visual.
@@ -327,26 +327,267 @@ plt.grid(True)
 plt.show()
 ```
 
+```txt
+Most correlated variables: ('SibSp', 'Parch') with a correlation of 0.55
+```
+
 ![Correlation](img/corr.png)
 
 #### _Descriptive Statistics_
 
+_Descriptive statistics_ adalah sekumpulan analisis dan nilai-nilai yang
+didapatkan yang menggambarkan karakteristik / ciri-ciri dari dataset.
+Jenis-jenis nilai yang didapatkan dalam _descriptive statistics_ adalah:
 
+- Jumlah (_count_)
+- Nilai rata-rata (_mean_)
+- Nilai simpangan baku (_standard deviation_)
+- Nilai minimum
+- Nilai interkuartil (IQR, meliputi 25%, 50%, dan 75%)
+- Nilai maksimum
+
+Untuk mendapatkan nilai-nilai di atas, dapat digunakan _method_ `describe`
+dalam _library pandas_. Selain metode tersebut, salah satu teknik yang
+biasa digunakan dalam _descriptive statistics_ untuk menampilkan _insight_
+secara visual adalah _box plot_. _Box plot_ menampilkan secara visual
+nilai-nilai seperti nilai minimum, nilai maksimum, nilai kuartil 1,
+nilai kuartil 2 (median), nilai kuartil 3, dan menampilkan pencilan /
+_outlier_.
+
+Berikut contoh nilai-nilai yang didapatkan dari dataset Titanic beserta
+ilustrasinya dalam bentuk _box plot_.
+
+```py
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load Titanic dataset
+url = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+df = pd.read_csv(url)
+
+print(df.describe())
+
+# Drop columns with non-numeric data for the box plot
+# You can adjust this list based on which columns you want to include
+numeric_columns = ['Age', 'Fare', 'SibSp', 'Parch']
+
+# Plot box plots for each numeric column
+plt.figure(figsize=(12, 8))
+
+for i, col in enumerate(numeric_columns, 1):
+    plt.subplot(2, 2, i)
+    sns.boxplot(x=df[col])
+    plt.title(f'Box Plot of {col}')
+    plt.xlabel(col)
+    plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+```txt
+       PassengerId    Survived      Pclass         Age       SibSp  \
+count   891.000000  891.000000  891.000000  714.000000  891.000000   
+mean    446.000000    0.383838    2.308642   29.699118    0.523008   
+std     257.353842    0.486592    0.836071   14.526497    1.102743   
+min       1.000000    0.000000    1.000000    0.420000    0.:w
+000000   
+25%     223.500000    0.000000    2.000000   20.125000    0.000000   
+50%     446.000000    0.000000    3.000000   28.000000    0.000000   
+75%     668.500000    1.000000    3.000000   38.000000    1.000000   
+max     891.000000    1.000000    3.000000   80.000000    8.000000   
+
+            Parch        Fare  
+count  891.000000  891.000000  
+mean     0.381594   32.204208  
+std      0.806057   49.693429  
+min      0.000000    0.000000  
+25%      0.000000    7.910400  
+50%      0.000000   14.454200  
+75%      0.000000   31.000000  
+max      6.000000  512.329200  
+```
+
+![Box plot](img/boxplot.png)
 
 #### _Grouping (Pivot)_
 
+Dalam menganalisis data, terkadang untuk mendapatkan _insight_ lebih dalam
+diperlukan pengelompokan data berdasarkan kategori yang berbeda. Data
+dikelompokkan berdasar pada satu atau beberapa variabel dan analisis
+dilakukan pada kelompok individu. Untuk melakukan _grouping_ data dapat
+digunakan _method_ `groupby` dalam _library pandas_. Data yang telah
+di-grouping tersebut dapat diolah menjadi sebuah _pivot table_. Pembuatan
+_pivot table_ menggunakan _method_ `pivot` dalam _library pandas_.
 
+Berikut adalah contoh operasi _grouping_ dan pembuatan _pivot table_ pada
+dataset Titanic.
+
+```py
+import pandas as pd
+
+# Load Titanic dataset
+url = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+df = pd.read_csv(url)
+
+# Create a pivot table grouped by the 'Embarked' column
+# Example pivot table showing mean values of numerical features
+pivot_table = df.pivot_table(
+    index='Embarked',  # Grouping by the 'Embarked' column
+    values=['Age', 'Fare', 'SibSp', 'Parch', 'Survived'],  # Numerical features to aggregate
+    aggfunc={'Age': 'mean', 'Fare': 'mean', 'SibSp': 'mean', 'Parch': 'mean', 'Survived': 'mean'}  # Aggregation functions
+)
+
+print("Pivot Table:")
+print(pivot_table)
+```
+
+```txt
+Pivot Table:
+                Age       Fare     Parch     SibSp  Survived
+Embarked                                                    
+C         30.814769  59.954144  0.363095  0.386905  0.553571
+Q         28.089286  13.276030  0.168831  0.428571  0.389610
+S         29.445397  27.079812  0.413043  0.571429  0.336957
+```
+
+Terlihat bahwa penumpang yang masuk ke kapal Titanic di lokasi Cherbourg
+secara rata-rata membayar tarif yang lebih tinggi dibandingkan penumpang
+dari lokasi lainnya, dan terlihat juga bahwa mereka lebih mungkin selamat
+dibandingkan penumpang dari lokasi lainnya.
 
 #### ANOVA
 
+ANOVA (_Analysis of Variance_) adalah metode untuk menentukan ada tidaknya
+perbedaan yang signifikan antara rata-rata dari dua kelompok data atau lebih.
+Nilai yang dihasilkan dari proses ANOVA adalah F-score dan P-value. Nilai
+F-score didapatkan dari simpangan antara rata-rata yang diasumsikan dengan
+rata-rata yang sebenarnya. Sedangkan, P-value menentukan signifikansi statistik.
 
+Berikut adalah contoh proses ANOVA untuk menentukan ada tidaknya perbedaan
+signifikan dalam umur antara penumpang laki-laki dan perempuan di dataset Titanic.
+
+```py
+import pandas as pd
+import scipy.stats as stats
+
+# Load Titanic dataset
+url = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+df = pd.read_csv(url)
+
+# Drop rows with missing values in the columns we will use
+df = df.dropna(subset=['Age', 'Sex'])
+
+# Prepare data for ANOVA
+# Convert 'Embarked' to categorical codes
+df['Sex_code'] = df['Sex'].astype('category').cat.codes
+
+# Perform ANOVA for 'Age' across different sexes
+anova_results = stats.f_oneway(
+    df['Age'][df['Sex_code'] == 0],  # Embarked = male
+    df['Age'][df['Sex_code'] == 1],  # Embarked = female
+)
+
+print("ANOVA:")
+print(f"F-statistic: {anova_results.statistic:.2f}")
+print(f"P-value: {anova_results.pvalue:.4f}")
+
+# Interpret the results
+if anova_results.pvalue < 0.05:
+    print("Ada perbedaan signifikan dalam kolom 'Age' di antara jenis kelamin 'male' dan 'female'")
+else:
+    print("Tidak ada perbedaan signifikan dalam kolom 'Age' di antara jenis kelamin 'male' dan 'female'")
+```
+
+```txt
+ANOVA:
+F-statistic: 6.25
+P-value: 0.0127
+Ada perbedaan signifikan dalam kolom 'Age' di antara jenis kelamin 'male' dan 'female'
+```
 
 ### Interpolasi dan Ekstrapolasi Data
 
+Interpolasi data adalah proses mengisi nilai yang belum diketahui di dalam
+rentang data tertentu yang diketahui. Ekstrapolasi data adalah proses mengisi
+nilai di luar rentang data yang ada. Interpolasi seringkali digunakan untuk
+melakukan _preprocessing_ data dengan mengisi nilai-nilai yang tidak diketahui,
+sedangkan ekstrapolasi digunakan untuk memprediksi tren dari data di luar
+rentang yang diketahui. Interpolasi bersifat lebih akurat
+dibandingkan ekstrapolasi, karena asumsi terhadap data di dalam rentang yang
+diketahui lebih dapat diandalkan dibandingkan asumsi bahwa data akan terus
+mengikuti pola yang selama ini tampak di luar rentang yang diketahui.
+Interpolasi dan ekstrapolasi menggunakan pendekatan linier, polinomial, dan
+lain-lain untuk mengestimasi nilai-nilai yang belum diketahui tersebut.
 
+Contoh interpolasi data:
+
+```py
+import pandas as pd
+import numpy as np
+
+# Example data with missing values
+data = {'Date': pd.date_range(start='2024-01-01', periods=5, freq='D'),
+        'Price': [100, np.nan, 102, np.nan, 104]}
+df = pd.DataFrame(data)
+
+# Interpolate missing values
+df['Price'] = df['Price'].interpolate(method='linear')
+
+print(df)
+```
+
+```txt
+        Date  Price
+0 2024-01-01  100.0
+1 2024-01-02  101.0
+2 2024-01-03  102.0
+3 2024-01-04  103.0
+4 2024-01-05  104.0
+```
+
+Contoh ekstrapolasi data:
+
+```py
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Example data
+data = {'Month': [1, 2, 3, 4, 5, 6],
+        'Sales': [200, 220, 250, 270, 290, 310]}
+df = pd.DataFrame(data)
+
+# Prepare data for linear regression
+X = df[['Month']]
+y = df['Sales']
+model = LinearRegression().fit(X, y)
+
+# Predict future values
+future_months = np.array([7, 8, 9]).reshape(-1, 1)
+future_sales = model.predict(future_months)
+
+# Plotting
+plt.scatter(df['Month'], df['Sales'], color='blue', label='Observed Data')
+plt.plot(df['Month'], model.predict(X), color='red', label='Trend Line')
+plt.plot(future_months, future_sales, color='green', linestyle='--', label='Extrapolated Data')
+plt.xlabel('Month')
+plt.ylabel('Sales')
+plt.title('Sales Forecast')
+plt.legend()
+plt.show()
+```
+
+![Ekstrapolasi](img/extrapolation.png)
 
 ## Referensi
 
 1. https://www.ibm.com/topics/exploratory-data-analysis
 2. https://www.ibm.com/topics/data-visualization
 3. https://online.hbs.edu/blog/post/data-visualization-techniques
+4. https://www.geeksforgeeks.org/how-to-perform-a-one-way-anova-in-python/
+5. https://realpython.com/how-to-pandas-pivot-table/
+6. https://blog.knowledgator.com/interpolation-extrapolation-and-reasoning-in-neural-networks-095aacad941f
+7. https://datasciencestunt.com/extrapolation-vs-interpolation/
+8. Modul Pelatihan "MICROCREDENTIAL: ASSOCIATE DATA SCIENTIST"
