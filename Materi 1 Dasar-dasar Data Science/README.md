@@ -224,6 +224,12 @@ Dengan memahami dan menerapkan tahap-tahap CRISP-DM ini secara efektif, praktisi
 
 ![Pasted image 20240831002807.png](img/Pasted_image_20240831002807.png)
 
+| **Tipe Data**             | **Sifat**                                                                                                                  | **Contoh**                                               |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| **Data Terstruktur**      | - Model data sudah ditentukan <br> - Format biasanya teks <br> - Elemen data dipisahkan jelas <br> - Mudah diekstrak       | - Data tabel <br> - Data objek <br> - Time series        |
+| **Data Tak Terstruktur**  | - Model data tidak ditentukan <br> - Format bisa teks, gambar, suara <br> - Elemen data tidak jelas <br> - Sulit diekstrak | - Dokumen teks bebas <br> - Data audio <br> - Data video |
+| **Data Semi-Terstruktur** | - Tidak sepenuhnya terstruktur <br> - Memiliki tag atau penanda untuk memisahkan elemen <br> - Mengatur hierarki           | - XML <br> - JSON                                        |
+
 ### 1. Data Terstruktur (Structured Data)
 
 - **Sifat:**
@@ -253,26 +259,7 @@ Dengan memahami dan menerapkan tahap-tahap CRISP-DM ini secara efektif, praktisi
     - Data video.
 
 ### 3. Data Semi-Terstruktur (Semi-Structured Data)
-
-| **Tipe Data** | **Sifat** | **Contoh** |
-| --- | --- | --- |
-| **Data Terstruktur** | - Model data sudah ditentukan
-- Format biasanya teks
-- Elemen data dipisahkan jelas
-- Mudah diekstrak | - Data tabel
-- Data objek
-- Time series |
-| **Data Tak Terstruktur** | - Model data tidak ditentukan
-- Format bisa teks, gambar, suara
-- Elemen data tidak jelas
-- Sulit diekstrak | - Dokumen teks bebas
-- Data audio
-- Data video |
-| **Data Semi-Terstruktur** | - Tidak sepenuhnya terstruktur
-- Memiliki tag atau penanda untuk memisahkan elemen
-- Mengatur hierarki | - XML
-- JSON |
-- Memiliki elemen-elemen yang tidak sepenuhnya terstruktur seperti tabel
+- Memiliki elemen-elemen yang tidak sepenuhnya terstruktur seperti tabel 
 - Memiliki tag atau penanda untuk memisahkan elemen-elemen semantik dan mengatur hierarki.
 
 ## Tipe Data Berdasarkan Sifatnya
