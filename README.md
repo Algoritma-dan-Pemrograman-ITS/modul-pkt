@@ -1,8 +1,5 @@
 # Silabus Pelatihan AI Pupuk Kaltim V3
 
-Created: August 16, 2024 6:57 AM
-Reviewed: No
-
 ## Hari ke-1: Dasar-dasar Data Science
 
 ### Siang
