@@ -304,14 +304,14 @@ atau menarik kesimpulan dari data baru.
    - Menambahkan penalti yang dapat mengatur beberapa bobot menjadi nol, mengurangi
      overfitting.
 
-## Karakteristik Regresi
+#### Karakteristik Regresi
 
 - Variabel Target Kontinu: Memodelkan nilai numerik seperti harga rumah atau berat badan.
 - Pengukuran Kesalahan: Evaluasi model berdasarkan kesalahan prediksi menggunakan metrik seperti MAE, MSE, dan RMSE.
 - Kompleksitas Model: Dari model linear sederhana hingga model non-linear kompleks.
 - Overfitting dan Underfitting: Risiko model terlalu cocok atau tidak cocok dengan data.
 
-## Metrik Evaluasi Regresi
+#### Metrik Evaluasi Regresi
 
 - Mean Absolute Error (MAE): Rata-rata selisih absolut antara nilai yang diprediksi dan nilai aktual.
 - Mean Squared Error (MSE): Rata-rata selisih kuadrat antara nilai yang diprediksi dan nilai aktual.
@@ -321,20 +321,20 @@ atau menarik kesimpulan dari data baru.
   lebih tahan terhadap _outlier_.
 - R² Score: Mengukur seberapa baik model cocok dengan data, dari 0 hingga 1.
 
-## Aplikasi Regresi
+#### Aplikasi Regresi
 
 - Prediksi Harga: Misalnya, memprediksi harga rumah berdasarkan fitur-fiturnya.
 - Peramalan Tren: Misalnya, meramalkan penjualan produk berdasarkan data historis.
 - Identifikasi Faktor Risiko: Misalnya, mengidentifikasi faktor risiko penyakit jantung.
 - Pengambilan Keputusan: Misalnya, merekomendasikan investasi berdasarkan data pasar.
 
-## Keuntungan Regresi
+#### Keuntungan Regresi
 
 - Mudah dipahami dan diinterpretasikan.
 - Tahan terhadap outlier.
 - Bisa menangani hubungan linear dan non-linear.
 
-## Kekurangan Regresi
+#### Kekurangan Regresi
 
 - Mengasumsikan hubungan linear.
 - Sensitif terhadap multikolinearitas.
@@ -344,9 +344,143 @@ atau menarik kesimpulan dari data baru.
 
 ### Time Series Forecasting
 
+Analisis dan _time series forecasting_ penting untuk memprediksi tren,
+perilaku, dan fluktuasi berdasarkan data historis. Teknik ini membantu
+bisnis membuat keputusan yang terinformasi, mengoptimalkan sumber daya,
+dan mengurangi risiko dengan memperkirakan permintaan pasar, fluktuasi
+penjualan, harga saham, dan lainnya. Analisis ini juga mendukung perencanaan,
+penganggaran, dan strategi di berbagai bidang seperti keuangan, ekonomi,
+kesehatan, sains iklim, dan manajemen sumber daya.
+
+_Time series_ adalah rangkaian titik data yang dikumpulkan, direkam, atau
+diukur pada interval waktu yang berurutan dan teratur.
+
+#### Komponen Time Series
+
+1. Trend: Gerakan jangka panjang dalam data, seperti peningkatan atau penurunan.
+2. Seasonality: Fluktuasi berkala yang terjadi pada interval yang reguler.
+3. Variasi Siklis: Fluktuasi jangka panjang yang tidak memiliki periode tetap.
+4. Irregularitas (atau Noise): Fluktuasi acak yang tidak dapat dijelaskan oleh tren, musiman, atau siklis.
+
+#### Visualisasi Time Series
+
+Visualisasi time series termasuk teknik seperti line plot, seasonal plot,
+histogram, density plot, autocorrelation & partial autocorrelation plot,
+spectral analysis, decomposition plot dan lain-lain untuk memahami tren,
+pola, dan anomali.
+
+#### Preprocessing Time Series
+
+Preprocessing time series melibatkan pembersihan, transformasi,
+dan persiapan data untuk analisis atau peramalan.
+
+##### Teknik Preprocessing
+
+- Stationarity
+- Differencing
+- Detrending
+- Deseasonalizing
+- Moving Average
+- Exponential Moving Average
+- Missing Value Imputation
+- Outlier Detection & Removal
+- Time Alignment
+- Data Transformation
+- Scaling
+- Normalization
+
+#### Analisis & Dekompisi Time Series
+
+Analisis dan dekomposisi deret waktu melibatkan pemisahan
+data menjadi komponen-komponennya, seperti trend, seasonality,
+dan residual error dalam data.
+
+##### Teknik Analisis & Dekomposisi
+
+- Autocorrelation Analysis
+- Partial Autocorrelation Functions (PACF)
+- Trend Analysis
+- Seasonality Analysis
+- Decomposition
+- Spectrum Analysis
+- Seasonal & Trend Decomposition with Loess (STL)
+- Rolling Correlation
+- Cross-correlation Analysis
+- Box-Jenkins Method
+- Granger Causality Analysis
+
+#### Apa itu Time Series Forecasting?
+
+Time series forecasting adalah teknik statistik untuk memprediksi
+nilai masa depan dari deret waktu berdasarkan pengamatan masa lalu.
+
+##### Algoritma Forecasting
+
+- Autoregressive (AR) model
+- ARIMA
+- ARIMAX
+- SARIMA
+- SARIMAX
+- Vector Autoregression (VAR)
+- Theta Method
+- Exponential Smoothing Method
+- Gaussian Processes Regression
+- Generalized Additive Models (GAM)
+- Random Forest
+- Gradient Boosting Machines (GBM)
+- State Space Model
+- Hidden Markov Model (HMM)
+- Dynamic Linear Model (DLM)
+- Recurrent Neural Network (RNN)
+- Long Short-Term Memory (LSTM)
+- Gated Recurrent Unit (GRU)
+
+#### Evaluasi Time Series Forecasting
+
+Evaluasi melibatkan pengukuran akurasi model peramalan menggunakan metrik
+seperti:
+
+- Mean Absolute Error (MAE)
+- Mean Absolute Percentage Error (MAPE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- Forecast Bias
+- Forecast Interval Coverage
+- Theil's U Statistics
+
+### Teknik Cross-Validation
+
+- Train-Test Split
+- Rolling Window Validation
+- Time Series Cross-validation
+- Walk-forward Validation
+
+## Library Python untuk Analisis & Forecasting Time Series
+
+| Library       | Area Fokus        | Keunggulan                                      | Kelemahan                                      |
+|---------------|-------------------|-----------------------------------------------|------------------------------------------------|
+| Statsmodels   | Statistik         | Dukungan luas untuk model klasik seperti ARIMA | Terbatas pada model statistik klasik           |
+| Pmdarima      | ARIMA             | Memudahkan pemilihan dan penyesuaian ARIMA    | Terbatas pada peramalan berbasis ARIMA         |
+| Prophet       | Peramalan Bisnis  | Antarmuka sederhana untuk musiman dan libur   | Kurang fleksibel untuk pola deret waktu kompleks|
+| tslearn       | Pembelajaran Mesin| Algoritma pembelajaran mesin untuk klasifikasi | Terbatas pada model statistik klasik           |
+| ARCH          | Ekonometrika Keuangan | Model ARCH/GARCH untuk volatilitas finansial | Fokus pada deret waktu finansial saja          |
+| GluonTS       | Pembelajaran Mendalam | Model peramalan probabilistik modern         | Memerlukan pemahaman tentang MXNet             |
+| PyFlux        | Pembelajaran Mendalam | Model seperti ARIMA dan GARCH dengan inferensi Bayesian | Memerlukan pengetahuan PyTorch                |
+| Sktime        | Pembelajaran Mesin | Kerangka kerja terintegrasi untuk berbagai model | Masih dalam pengembangan                       |
+| PyCaret        | AutoML            | Otomatisasi peramalan deret waktu              | Kontrol terbatas pada model individu           |
+| Darts         | Peramalan Probabilistik | Model peramalan dengan kuantifikasi ketidakpastian | Kurva belajar yang lebih curam                 |
+| Kats          | Peramalan Bayesian | Pendekatan Bayesian untuk peramalan           | Antarmuka kurang ramah pengguna                 |
+| AutoTS        | Peramalan Otomatis | Otomatisasi pemilihan model dan penyetelan parameter | Kontrol terbatas pada model spesifik          |
+| Scikit-learn  | Pembelajaran Mesin | Algoritma untuk regresi dan klasifikasi       | Tidak dirancang khusus untuk analisis deret waktu |
+| TensorFlow    | Pembelajaran Mendalam | Kerangka mendalam untuk model kustom          | Memerlukan pengetahuan mendalam tentang deep learning |
+| Keras          | API Deep Learning | API tingkat tinggi untuk model deep learning  | Memerlukan pemahaman konsep deep learning       |
+| PyTorch       | Pembelajaran Mendalam | Fleksibilitas tinggi untuk prototyping        | Memerlukan pengetahuan mendalam tentang deep learning |
+
 [Referensi _notebook_ Kaggle untuk time series forecasting](https://www.kaggle.com/code/jegun19/predictive-maintenance-time-series-forecasting)
 
 ### Object Detection
+
+
 
 ## Semi-supervised
 
