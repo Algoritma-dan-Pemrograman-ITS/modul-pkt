@@ -1,4 +1,4 @@
-# Materi Hari 1 AI
+![image](https://github.com/user-attachments/assets/751d46c5-aed7-42ae-9504-9ba9d1984fe0)# Materi Hari 1 AI
 
 Created: August 31, 2024 7:40 AM
 Class: Silabus AI PKT
@@ -48,8 +48,9 @@ Reviewed: No
     
 
 # CRISP-DM (Cross-Industry Standard Process for Data Mining)
+![image](https://github.com/user-attachments/assets/0d6b03d5-2ac6-42c2-b06e-07fb8a2aab2b)
 
-![Pasted image 20240829193046.png](img/Pasted_image_20240829193046.png)
+Sumber gambar: https://www.datascience-pm.com/crisp-dm-2/
 
 ![Pasted image 20240829193128.png](img/Pasted_image_20240829193128.png)
 
