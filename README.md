@@ -1,96 +1,67 @@
 # Silabus Pelatihan AI Pupuk Kaltim V3
 
-## Hari ke-1: Dasar-dasar Data Science
+## Materi 1: Warming up - Dasar-dasar Data Science
+- Sistem AI Berbasis Data
+- CRISP-DM (Cross-Industry Standard Process for Data Mining)
+- Tipe Data
+- Exploratory Data Analysis
 
-### Siang
-
-- CRISP-DM: Tahapan, kebutuhan, dan contoh implementasi
-    - Jenis-jenis Data
-        - Structured
-            - Numeric
-                - Meliputi Time Series
-            - Categorical
-        - Unstructured
-            - Text
-            - Image
-    - Eksplorasi Data dan Visualisasi (EDA)
-        - Teknik visualisasi data
-        - Interpolasi dan ekstrapolasi
-    - Data Preprocessing
-
-# Hari ke-2
-
-### Pagi: Dasar-dasar AI dan Machine Learning, beserta Clustering
-
+## Materi 2: Dasar-dasar AI dan Machine Learning
 - Overview AI dan ML
-    - Kategori-kategori
-        - Unsupervised
-            - Clustering
-        - Supervised
-            - Klasifikasi
-            - Regresi
-            - Time Series Forecasting
-            - Object Detection
-        - LLM
-- Clustering
-    - Algoritma-algoritma (KNN, etc)
+    - Unsupervised
+        - Clustering
+    - Supervised
+        - Klasifikasi
+        - Regresi
+        - Time Series Forecasting
+        - Object Detection
+    - LLM
+
+## Materi 3: Clustering
+- Algoritma-algoritma
     - Implementasi
     - Evaluasi
 
-### Siang: Klasifikasi dan Regresi
+## Materi 4: Klasifikasi
+- Algoritma-algoritma (Decision Tree, Random Forest, SVC, etc)
+- Implementasi
+- Evaluasi
+- Reduksi Dimensi dan Feature Importance
 
-- Klasifikasi
-    - Algoritma-algoritma (Decision Tree, Random Forest, SVC, etc)
-    - Implementasi
-    - Evaluasi
-    - Reduksi Dimensi dan Feature Importance
-- Regresi
-    - Algoritma-algoritma (Linear Regression, Polynomial Regression, Ridge, Lasso, etc)
-    - Implementasi
-    - Evaluasi
-    - Feature Importance
+## Materi 5: Regresi
+- Algoritma-algoritma (Linear Regression, Polynomial Regression, Ridge, Lasso, etc)
+- Implementasi
+- Evaluasi
+- Feature Importance
 
-# Hari ke-3
+## Materi 6: Overview Deep Learning
+- Arsitektur-arsitektur dasar neural network
+- Aplikasi pada data tabular, gambar, dan teks
+- Referensi untuk pembelajaran lanjutan
 
-## Pagi: Overview Deep Learning
+## Materi 7: Basic Forecasting
+- Perbandingan library forecasting (skforecast, scalecast, nixtla, darts, etc)
+- Perbandingan model statistik, machine learning, dan deep learning untuk forecasting
+- Hubungan regresi dengan forecasting
 
-- Overview Deep Learning
-    - Arsitektur-arsitektur dasar neural network
-    - Aplikasi pada data tabular, gambar, dan teks
-    - Referensi untuk pembelajaran lanjutan
+## Materi 8: Advanced Forecasting
+- Local dan Global model
+- Hybrid modeling
+- Transfer learning dalam forecasting
+- Zero-shot forecasting
 
-## Siang: Forecasting
-
-- Forecasting Dasar
-    - Perbandingan library forecasting (skforecast, scalecast, nixtla, darts, etc)
-    - Perbandingan model statistik, machine learning, dan deep learning untuk forecasting
-    - Hubungan regresi dengan forecasting
-
-# Hari ke-4
-
-## Pagi: Advanced Forecasting, 
-- Teknik forecasting lanjutan
-  - Local dan Global model
-  - Hybrid modeling
-  - Transfer learning dalam forecasting
-  - Zero-shot forecasting
-
-## Siang: Overview Generative AI dan LLM
+## Materi 9: Overview Generative AI dan LLM
 - Overview Generative AI
-    - Contoh Aplikasi pada data tabular, gambar, dan teks
 - Overview Large Language Models (LLM)
 
-# Hari ke-5
-
-## Pagi: Menjalankan LLM Sendiri untuk Use Case Specific
+## Materi 10: Praktik LLM untuk Use Case Specific
 - Ollama, LangChain
-    - Setup dan Instalasi
-    - Membuat custom prompt dan instruction
-    - Menambah pengetahuan LLM dari dokumen
-    - Fine-tuning & Retrieval-Augmented Generation (RAG)
+- Setup dan Instalasi
+- Membuat custom prompt dan instruction
+- Menambah pengetahuan LLM dari dokumen
+- Fine-tuning & Retrieval-Augmented Generation (RAG)
 
-## Siang: Wrap-up
-
+## Wrap-up
 - Review materi keseluruhan
 - Diskusi case study
 - Q&A session
