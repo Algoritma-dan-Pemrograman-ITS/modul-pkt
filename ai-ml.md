@@ -12,7 +12,7 @@ sendiri, sehingga mengurangi kebutuhan untuk melakukan ekstraksi fitur manual.
 
 ## Unsupervised
 
-_Unsupervised learning_ adalah pendekatan ML yang melakukan proses pembelajaran
+_Unsupervised learning_ adalah pendekatan ML yang melakukan proses Learning
 dari data yang tidak berlabel. Model belajar dari karakteristik data secara
 langsung dan tanpa arahan dan pengawasan dari manusia. Model mendapatkan pola
 dari kesamaan dan perbedaan antara poin-poin data dan mengelompokkan data ke
@@ -143,11 +143,15 @@ Sumber: https://builtin.com/articles/gaussian-mixture-model
 
 ## Supervised
 
-_Supervised learning_ adalah pendekatan ML yang melakukan proses pembelajaran
+_Supervised learning_ adalah pendekatan ML yang melakukan proses Learning
 dari data yang diberi label. Model belajar dari karakteristik data secara terarah
 menggunakan label sebagai petunjuk hubungan antara input dan output model.
 Model selanjutnya digunakan untuk memprediksi atau membuat keputusan berdasarkan
 data baru yang masuk.
+
+![Supervised learning](img/supervised-learning.png)
+
+Sumber: https://www.datacamp.com/blog/classification-machine-learning
 
 ### Klasifikasi
 
@@ -156,6 +160,10 @@ yang bersifat kategorikal. Contohnya adalah pengklasifikasian email sebagai
 spam atau non-spam. Proses klasifikasi menggunakan label dan karakteristik
 data yang sudah dipelajari sebelumnya untuk memprediksi label / kategori dari
 data baru.
+
+![Klasifikasi](img/spam-no-spam.png)
+
+Sumber: https://www.datacamp.com/blog/classification-machine-learning
 
 Klasifikasi dibagi menjadi beberapa jenis, yaitu klasifikasi biner dan klasifikasi
 _multiclass_. Klasifikasi biner mengelompokkan input menjadi 2 kategori saja,
@@ -167,6 +175,13 @@ kucing. Selain itu, terdapat juga klasifikasi multilabel dan
 _imbalanced classification_. Pada klasifikasi multilabel, suatu data bisa
 masuk ke dalam beberapa jenis label sekaligus. Pada _imbalanced classification_,
 data baru bisa masuk ke dalam kelas mayoritas maupun minoritas.
+
+![binary classification](img/binary-classification.png)
+![multiclass classification](img/multiclass-classification.png)
+![multilabel classification](img/multilabel-classification.png)
+![imbalanced classification](img/imbalanced-classification.png)
+
+Sumber: https://www.datacamp.com/blog/classification-machine-learning
 
 #### Jenis-Jenis Algoritma Klasifikasi
 
@@ -225,6 +240,15 @@ ruang dimensi tinggi dan dengan dataset besar. Kekurangannya adalah membutuhkan 
   - Kurva ROC: Plot rasio true positive rate (recall) terhadap false positive rate.
   - AUC: Luas di bawah kurva ROC, mengukur kinerja keseluruhan model.
 - Cross-Validation: Teknik membagi data menjadi beberapa lipatan untuk estimasi kinerja model yang lebih robust.
+
+![conf. matrix](img/confusion-matrix.webp)
+![conf. matrix 2](img/confusion-matrix2.webp)
+![accuracy](img/accuracy.webp)
+![precision](img/precision.webp)
+![recall](img/recall.webp)
+![f1-score](img/f1-score.webp)
+
+Sumber: https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd
 
 ##### Karakteristik Klasifikasi
 
@@ -324,7 +348,7 @@ atau menarik kesimpulan dari data baru.
 #### Aplikasi Regresi
 
 - Prediksi Harga: Misalnya, memprediksi harga rumah berdasarkan fitur-fiturnya.
-- Peramalan Tren: Misalnya, meramalkan penjualan produk berdasarkan data historis.
+- Forecasting Tren: Misalnya, meramalkan penjualan produk berdasarkan data historis.
 - Identifikasi Faktor Risiko: Misalnya, mengidentifikasi faktor risiko penyakit jantung.
 - Pengambilan Keputusan: Misalnya, merekomendasikan investasi berdasarkan data pasar.
 
@@ -360,7 +384,7 @@ diukur pada interval waktu yang berurutan dan teratur.
 1. Trend: Gerakan jangka panjang dalam data, seperti peningkatan atau penurunan.
 2. Seasonality: Fluktuasi berkala yang terjadi pada interval yang reguler.
 3. Variasi Siklis: Fluktuasi jangka panjang yang tidak memiliki periode tetap.
-4. Irregularitas (atau Noise): Fluktuasi acak yang tidak dapat dijelaskan oleh tren, musiman, atau siklis.
+4. Irregularitas (atau Noise): Fluktuasi acak yang tidak dapat dijelaskan oleh tren, Seasonality, atau siklis.
 
 #### Visualisasi Time Series
 
@@ -372,7 +396,7 @@ pola, dan anomali.
 #### Preprocessing Time Series
 
 Preprocessing time series melibatkan pembersihan, transformasi,
-dan persiapan data untuk analisis atau peramalan.
+dan persiapan data untuk analisis atau Forecasting.
 
 ##### Teknik Preprocessing
 
@@ -391,7 +415,7 @@ dan persiapan data untuk analisis atau peramalan.
 
 #### Analisis & Dekompisi Time Series
 
-Analisis dan dekomposisi deret waktu melibatkan pemisahan
+Analisis dan dekomposisi Time Series melibatkan pemisahan
 data menjadi komponen-komponennya, seperti trend, seasonality,
 dan residual error dalam data.
 
@@ -412,7 +436,7 @@ dan residual error dalam data.
 #### Apa itu Time Series Forecasting?
 
 Time series forecasting adalah teknik statistik untuk memprediksi
-nilai masa depan dari deret waktu berdasarkan pengamatan masa lalu.
+nilai masa depan dari Time Series berdasarkan pengamatan masa lalu.
 
 ##### Algoritma Forecasting
 
@@ -437,7 +461,7 @@ nilai masa depan dari deret waktu berdasarkan pengamatan masa lalu.
 
 #### Evaluasi Time Series Forecasting
 
-Evaluasi melibatkan pengukuran akurasi model peramalan menggunakan metrik
+Evaluasi melibatkan pengukuran akurasi model Forecasting menggunakan metrik
 seperti:
 
 - Mean Absolute Error (MAE)
@@ -460,27 +484,95 @@ seperti:
 | Library       | Area Fokus        | Keunggulan                                      | Kelemahan                                      |
 |---------------|-------------------|-----------------------------------------------|------------------------------------------------|
 | Statsmodels   | Statistik         | Dukungan luas untuk model klasik seperti ARIMA | Terbatas pada model statistik klasik           |
-| Pmdarima      | ARIMA             | Memudahkan pemilihan dan penyesuaian ARIMA    | Terbatas pada peramalan berbasis ARIMA         |
-| Prophet       | Peramalan Bisnis  | Antarmuka sederhana untuk musiman dan libur   | Kurang fleksibel untuk pola deret waktu kompleks|
-| tslearn       | Pembelajaran Mesin| Algoritma pembelajaran mesin untuk klasifikasi | Terbatas pada model statistik klasik           |
-| ARCH          | Ekonometrika Keuangan | Model ARCH/GARCH untuk volatilitas finansial | Fokus pada deret waktu finansial saja          |
-| GluonTS       | Pembelajaran Mendalam | Model peramalan probabilistik modern         | Memerlukan pemahaman tentang MXNet             |
-| PyFlux        | Pembelajaran Mendalam | Model seperti ARIMA dan GARCH dengan inferensi Bayesian | Memerlukan pengetahuan PyTorch                |
-| Sktime        | Pembelajaran Mesin | Kerangka kerja terintegrasi untuk berbagai model | Masih dalam pengembangan                       |
-| PyCaret        | AutoML            | Otomatisasi peramalan deret waktu              | Kontrol terbatas pada model individu           |
-| Darts         | Peramalan Probabilistik | Model peramalan dengan kuantifikasi ketidakpastian | Kurva belajar yang lebih curam                 |
-| Kats          | Peramalan Bayesian | Pendekatan Bayesian untuk peramalan           | Antarmuka kurang ramah pengguna                 |
-| AutoTS        | Peramalan Otomatis | Otomatisasi pemilihan model dan penyetelan parameter | Kontrol terbatas pada model spesifik          |
-| Scikit-learn  | Pembelajaran Mesin | Algoritma untuk regresi dan klasifikasi       | Tidak dirancang khusus untuk analisis deret waktu |
-| TensorFlow    | Pembelajaran Mendalam | Kerangka mendalam untuk model kustom          | Memerlukan pengetahuan mendalam tentang deep learning |
+| Pmdarima      | ARIMA             | Memudahkan pemilihan dan penyesuaian ARIMA    | Terbatas pada Forecasting berbasis ARIMA         |
+| Prophet       | Forecasting Bisnis  | Antarmuka sederhana untuk Seasonality   | Kurang fleksibel untuk pola Time Series kompleks|
+| tslearn       | Machine Learning| Algoritma Learning mesin untuk klasifikasi | Terbatas pada model statistik klasik           |
+| ARCH          | Ekonometrika Keuangan | Model ARCH/GARCH untuk volatilitas finansial | Fokus pada Time Series finansial saja          |
+| GluonTS       | Deep Learning | Model Forecasting probabilistik modern         | Memerlukan pemahaman tentang MXNet             |
+| PyFlux        | Deep Learning | Model seperti ARIMA dan GARCH dengan inferensi Bayesian | Memerlukan pengetahuan PyTorch                |
+| Sktime        | Machine Learning | Kerangka kerja terintegrasi untuk berbagai model | Masih dalam pengembangan                       |
+| PyCaret        | AutoML            | Otomatisasi Forecasting Time Series              | Kontrol terbatas pada model individu           |
+| Darts         | Forecasting Probabilistik | Model Forecasting dengan kuantifikasi ketidakpastian | Kurva belajar yang lebih curam                 |
+| Kats          | Forecasting Bayesian | Pendekatan Bayesian untuk Forecasting           | Antarmuka kurang ramah pengguna                 |
+| AutoTS        | Forecasting Otomatis | Otomatisasi pemilihan model dan penyetelan parameter | Kontrol terbatas pada model spesifik          |
+| Scikit-learn  | Machine Learning | Algoritma untuk regresi dan klasifikasi       | Tidak dirancang khusus untuk analisis Time Series |
+| TensorFlow    | Deep Learning | Kerangka mendalam untuk model kustom          | Memerlukan pengetahuan mendalam tentang deep learning |
 | Keras          | API Deep Learning | API tingkat tinggi untuk model deep learning  | Memerlukan pemahaman konsep deep learning       |
-| PyTorch       | Pembelajaran Mendalam | Fleksibilitas tinggi untuk prototyping        | Memerlukan pengetahuan mendalam tentang deep learning |
+| PyTorch       | Deep Learning | Fleksibilitas tinggi untuk prototyping        | Memerlukan pengetahuan mendalam tentang deep learning |
 
 [Referensi _notebook_ Kaggle untuk time series forecasting](https://www.kaggle.com/code/jegun19/predictive-maintenance-time-series-forecasting)
 
 ### Object Detection
 
+Object detection adalah proses dalam visi komputer yang digunakan untuk
+mendeteksi adanya objek dengan kelas / jenis tertentu dalam citra digital
+seperti foto maupun video. Object detection menjawab pertanyaan:
 
+- Ada object apa saja?
+- Di mana objek-objek tersebut berada?
+
+Object detection membedakan antara objek yang dimaksud dengan lingkungan sekitar
+dengan menentukan boundary / batas dari objek-objek dalam lingkungan. Object
+detection melakukan proses klasifikasi dan lokalisasi dalam proses deteksinya.
+
+![object detection](img/object-detection.webp)
+![object detection gif](img/object-detection.gif)
+
+Sumber: https://viso.ai/deep-learning/object-detection/
+
+#### Tahapan Object Detection
+
+1. Input Image: Proses deteksi objek dimulai dengan analisis gambar atau video.
+2. Pre-processing: Gambar di-preprocess untuk memastikan format yang sesuai untuk model yang digunakan.
+3. Feature Extraction: Model CNN digunakan sebagai ekstraktor fitur, model ini bertanggung jawab untuk membedah gambar menjadi beberapa wilayah dan mengambil fitur dari setiap wilayah untuk mendeteksi pola berbagai objek.
+4. Classification: Setiap wilayah gambar diklasifikasikan ke dalam kategori berdasarkan fitur yang diekstraksi. Tugas klasifikasi dilakukan menggunakan SVM atau neural network lainnya yang menghitung probabilitas setiap kategori yang ada di wilayah tersebut.
+5. Localization: Secara bersamaan dengan proses klasifikasi, model menentukan bounding box setiap objek yang terdeteksi. Ini melibatkan perhitungan koordinat untuk kotak yang menutupi setiap objek, sehingga secara akurat menentukan lokasinya di dalam gambar.
+6. Non-max Suppression: Ketika model mengidentifikasi beberapa bounding box untuk objek yang sama, non-max suppression digunakan untuk menangani tumpang tindih ini. Teknik ini hanya menyimpan bounding box dengan skor kepercayaan tertinggi dan menghapus box lainnya yang tumpang tindih.
+7. Output: Proses berakhir dengan gambar asli yang diberi tanda dengan bounding box dan label yang menggambarkan objek yang terdeteksi dan kategori yang sesuai.
+
+#### Teknik-Teknik Object Detection
+
+##### Teknik Tradisional
+
+Teknik tradisional bergantung pada ekstraksi fitur manual dan teknik klasifikasi.
+Beberapa contoh teknik tradisional adalah sebagai berikut:
+
+- Haar Cascades
+- Histogram of Oriented Gradients (HOG)
+- Scale-Invariant Feature Transform (SIFT)
+
+##### Teknik Deep Learning
+
+Dalam teknik deep learning, metode deteksi objek dibagi menjadi 2 jenis, yaitu:
+
+- Single stage detector: dalam satu fase deteksi, dihasilkan bounding box dan
+  probabilitas klasifikasi kelas dari objek-objek. Contoh: YOLO (You Only Look Once),
+  SSD (Single Shot Multibox Detector).
+- Two stage detector: bekerja dalam dua fase, pertama, ditentukan wilayah-wilayah
+  kandidat yang akan diklasifikasikan di fase kedua. Contoh: R-CNN (Regions with
+  Convolutional Neural Network), Fast R-CNN, Faster R-CNN.
+
+###### Single Stage Detectors
+
+1. YOLO: arsitektur object detection yang memprediksi bounding box dan klasifikasi
+   objek dalam satu fase. Bekerja dengan membagi citra ke dalam grid-grid dan
+   memprediksi bounding box dan klasifikasi untuk setiap cell dari grid.
+2. SSD: arsitektur object detection yang menggunakan feature map dari layer-layer
+   CNN untuk mendeteksi objek dalam skala-skala yang berbeda. Bekerja dengan cepat
+   dan hanya menggunakan 1 fase saja.
+   
+###### Two Stage Detectors
+
+1. R-CNN: Teknik ini menggunakan algoritma selective search untuk menghasilkan 2000 proposal wilayah dari gambar, kemudian wilayah yang diusulkan diubah ukurannya dan dilewatkan melalui model CNN yang telah dilatih untuk mengekstraksi vektor fitur. Vektor fitur ini kemudian dimasukkan ke dalam classifier untuk mengklasifikasikan objek dalam wilayah tersebut.
+2. Fast R-CNN: Teknik ini memproses gambar lengkap dengan CNN untuk menghasilkan peta fitur. Lapisan Region of Interest (ROI) Pooling digunakan untuk mengekstraksi vektor fitur dari peta fitur. Teknik ini menggabungkan pendekatan klasifikasi dan regresi dengan menggunakan satu jaringan fully connected untuk memberikan output baik untuk probabilitas kelas maupun koordinat bounding box.
+3. Faster R-CNN: Teknik ini menggunakan Region Proposal Network (RPN) yang memprediksi batas objek dari peta fitur yang dibuat oleh CNN awal, kemudian fitur dari wilayah yang diusulkan oleh RPN dipool menggunakan ROI Pooling dan dimasukkan ke dalam jaringan yang memprediksi kelas dan bounding box.
+
+#### Penggunaan Object Detection
+
+- Kendaraan Otonom: Tesla Autopilot, Waymo.
+- Pengawasan Publik: mendeteksi lalu lintas, plat nomor, kerumuman massa, pengenalan identitas.
+- Deteksi Penyakit: mendeteksi tumor, jaringan yang rusak, dan penyakit lain.
+- Robotika: tangan-tangan robotik di pabrik dilengkapi dengan fitur object detection.
 
 ## Semi-supervised
 
@@ -491,10 +583,12 @@ seperti:
 1. https://cloud.google.com/discover/what-is-unsupervised-learning
 2. https://www.geeksforgeeks.org/clustering-in-machine-learning/
 3. https://www.geeksforgeeks.org/getting-started-with-classification/
-4. https://www.geeksforgeeks.org/regression-in-machine-learning/
-5. https://builtin.com/data-science/regression-machine-learning
-6. https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide
-7. https://www.geeksforgeeks.org/time-series-analysis-and-forecasting/
-8. https://www.ibm.com/topics/object-detection
-9. https://viso.ai/deep-learning/object-detection/
-10. https://www.geeksforgeeks.org/large-language-model-llm/
+4. https://www.datacamp.com/blog/classification-machine-learning
+5. https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd
+6. https://www.geeksforgeeks.org/regression-in-machine-learning/
+7. https://builtin.com/data-science/regression-machine-learning
+8. https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide
+9. https://www.geeksforgeeks.org/time-series-analysis-and-forecasting/
+10. https://www.ibm.com/topics/object-detection
+11. https://viso.ai/deep-learning/object-detection/
+12. https://www.geeksforgeeks.org/large-language-model-llm/
