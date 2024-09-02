@@ -419,6 +419,11 @@ Analisis dan dekomposisi Time Series melibatkan pemisahan
 data menjadi komponen-komponennya, seperti trend, seasonality,
 dan residual error dalam data.
 
+![time series component](img/component-of-time-series-forecast.jpg)
+![time series component 2](img/time-series-components.jpg)
+
+Sumber: https://www.springboard.com/blog/data-science/time-series-forecasting/
+
 ##### Teknik Analisis & Dekomposisi
 
 - Autocorrelation Analysis
@@ -437,6 +442,10 @@ dan residual error dalam data.
 
 Time series forecasting adalah teknik statistik untuk memprediksi
 nilai masa depan dari Time Series berdasarkan pengamatan masa lalu.
+
+![time series forecast 1](img/time-series-forecasting-overview.webp)
+
+Sumber: https://www.springboard.com/blog/data-science/time-series-forecasting/
 
 ##### Algoritma Forecasting
 
@@ -664,6 +673,8 @@ LLM-LLM berikut adalah beberapa dari jenis LLM yang populer digunakan:
 - Debugging dan Dokumentasi Kode: Jika mengalami kesulitan dengan beberapa bagian kode terkait cara mendebug-nya, maka ChatGPT dapat memberi tahu baris kode yang menimbulkan masalah beserta solusinya. Selain itu, ChatGPT juga bisa menuliskan dokumentasi untuk kode program.
 - Menjawab Pertanyaan: ChatGPT bisa dijadikan seperti search engine yang lebih canggih dan mengerti konteks, tidak seperti search engine Google, Bing, dan sebagainya.
 - Penerjemahan Bahasa: LLM dapat mengonversi teks dari satu bahasa ke bahasa lain jika dibuat dengan kapabilitas tersebut. Beberapa LLM juga dapat membantu memperbaiki kesalahan tata bahasa dalam teks yang pengguna tulis.
+
+![chatgpt poem](img/ChatGPT-poem.gif)
 
 # Referensi
 
