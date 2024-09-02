@@ -128,7 +128,7 @@ Sumber: https://www.geeksforgeeks.org/difference-between-agglomerative-clusterin
 
 Pada _distribution-based clustering_, poin-poin data dikelompokkan berdasarkan
 tendensinya untuk masuk ke dalam salah satu distribusi statistik, contohnya
-distribusi Gaussian atau distribusi normal. Teknik ini memiliki kelebihan
+distribusi Gaussian Mixture Model. Teknik ini memiliki kelebihan
 dibandingkan _hard clustering_ seperti K-Means, yaitu bisa menyiratkan nilai
 ketidakpastian keanggotaan kluster suatu poin data dalam bentuk probabilitas.
 Hal ini memungkinkan teknik ini untuk melakukan iterasi untuk meningkatkan
