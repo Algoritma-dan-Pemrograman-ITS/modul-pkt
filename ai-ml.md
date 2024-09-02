@@ -246,6 +246,102 @@ ruang dimensi tinggi dan dengan dataset besar. Kekurangannya adalah membutuhkan 
 
 ### Regresi
 
+Regresi adalah metode statistik yang digunakan untuk menganalisis hubungan antara
+variabel target (variabel dependen) dengan variabel predictor (variabel independen).
+Dari proses regresi akan didapatkan model yang paling sesuai untuk membuat prediksi
+atau menarik kesimpulan dari data baru.
+
+#### Jenis-Jenis Regresi
+
+1. Regresi Sederhana:
+   - Menggunakan satu variabel independen untuk memprediksi variabel dependen.
+   - Contoh: Memprediksi berat badan berdasarkan tinggi badan.
+
+2. Regresi Berganda:
+   - Menggunakan beberapa variabel independen untuk memprediksi variabel dependen.
+   - Contoh: Memprediksi harga rumah berdasarkan ukuran, lokasi, dan fitur lainnya.
+
+3. Regresi Nonlinier:
+   - Digunakan ketika hubungan antara variabel tidak linear.
+   - Contoh: Hubungan kompleks yang tidak dapat diukur dengan garis lurus.
+
+#### Algoritma Regresi
+
+1. Regresi Linear:
+   - Mengasumsikan hubungan linear antara variabel independen dan dependen.
+
+   ![Linear regression](img/linear-regression.png)
+
+   Sumber: https://www.analyticsvidhya.com/blog/2021/07/all-you-need-to-know-about-polynomial-regression/
+
+2. Regresi Polinomial:
+   - Menggunakan polinomial untuk menangkap hubungan non-linear.
+
+   ![Polynomial regression](img/polynomial-regression.png)
+
+   Sumber: https://www.analyticsvidhya.com/blog/2021/07/all-you-need-to-know-about-polynomial-regression/
+
+3. Support Vector Regression (SVR):
+   - Mencari hyperplane yang meminimalkan selisih kuadrat antara nilai yang diprediksi dan aktual.
+
+   ![SVR](img/support-vector-regression.webp)
+
+    Sumber: https://www.analyticsvidhya.com/blog/2020/03/support-vector-regression-tutorial-for-machine-learning/
+
+4. Regresi Decision Tree:
+   - Membangun decision tree untuk memprediksi nilai target.
+
+5. Regresi Random Forest:
+   - Menggabungkan beberapa decision tree untuk meningkatkan akurasi prediksi.
+
+#### Teknik Regularized Regression
+
+1. Ridge Regression:
+   - Menghindari overfitting dengan menambahkan _term_ yang teregulasi dengan parameter
+     alpha sehingga membantu algoritma untuk mengecilkan _weight_ sebisa mungkin.
+
+2. Lasso Regression:
+   - Menambahkan penalti yang dapat mengatur beberapa bobot menjadi nol, mengurangi
+     overfitting.
+
+## Karakteristik Regresi
+
+- Variabel Target Kontinu: Memodelkan nilai numerik seperti harga rumah atau berat badan.
+- Pengukuran Kesalahan: Evaluasi model berdasarkan kesalahan prediksi menggunakan metrik seperti MAE, MSE, dan RMSE.
+- Kompleksitas Model: Dari model linear sederhana hingga model non-linear kompleks.
+- Overfitting dan Underfitting: Risiko model terlalu cocok atau tidak cocok dengan data.
+
+## Metrik Evaluasi Regresi
+
+- Mean Absolute Error (MAE): Rata-rata selisih absolut antara nilai yang diprediksi dan nilai aktual.
+- Mean Squared Error (MSE): Rata-rata selisih kuadrat antara nilai yang diprediksi dan nilai aktual.
+- Root Mean Squared Error (RMSE): Akar kuadrat dari MSE.
+- Huber Loss: Fungsi kerugian hybrid yang seimbang antara MAE dan MSE.
+- Root Mean Square Logarithmic Error: Menggunakan logaritma dalam penghitungan sehingga
+  lebih tahan terhadap _outlier_.
+- R² Score: Mengukur seberapa baik model cocok dengan data, dari 0 hingga 1.
+
+## Aplikasi Regresi
+
+- Prediksi Harga: Misalnya, memprediksi harga rumah berdasarkan fitur-fiturnya.
+- Peramalan Tren: Misalnya, meramalkan penjualan produk berdasarkan data historis.
+- Identifikasi Faktor Risiko: Misalnya, mengidentifikasi faktor risiko penyakit jantung.
+- Pengambilan Keputusan: Misalnya, merekomendasikan investasi berdasarkan data pasar.
+
+## Keuntungan Regresi
+
+- Mudah dipahami dan diinterpretasikan.
+- Tahan terhadap outlier.
+- Bisa menangani hubungan linear dan non-linear.
+
+## Kekurangan Regresi
+
+- Mengasumsikan hubungan linear.
+- Sensitif terhadap multikolinearitas.
+- Mungkin tidak cocok untuk hubungan yang sangat kompleks.
+
+[Referensi _notebook_ Kaggle Linear Regression](https://www.kaggle.com/code/mohammedezzeldean/car-price-prediction-linearregresion-lasso)
+
 ### Time Series Forecasting
 
 [Referensi _notebook_ Kaggle untuk time series forecasting](https://www.kaggle.com/code/jegun19/predictive-maintenance-time-series-forecasting)
