@@ -139,7 +139,7 @@ nilai centroid kluster menjadi lebih optimal lagi.
 
 Sumber: https://builtin.com/articles/gaussian-mixture-model
 
-[Referensi _notebook_ Kaggle untuk clustering](https://www.kaggle.com/code/kushal1996/customer-segmentation-k-means-analysis)
+[Referensi _notebook_ Kaggle untuk K-Means](https://www.kaggle.com/code/kushal1996/customer-segmentation-k-means-analysis)
 
 ## Supervised
 
@@ -168,7 +168,7 @@ _imbalanced classification_. Pada klasifikasi multilabel, suatu data bisa
 masuk ke dalam beberapa jenis label sekaligus. Pada _imbalanced classification_,
 data baru bisa masuk ke dalam kelas mayoritas maupun minoritas.
 
-#### Algoritma Klasifikasi
+#### Jenis-Jenis Algoritma Klasifikasi
 
 ##### Linear Classifiers
 
@@ -198,23 +198,21 @@ algoritma klasifikasi non-linear adalah:
 - ExtraTrees Classifier
 - Multi-layer Artificial Neural Networks
 
-##### Jenis Pembelajar dalam Klasifikasi
+##### Jenis-Jenis Pembelajar dalam Klasifikasi
 
 ###### Pembelajar Malas (Lazy Learners)
 
-- Tidak membuat model selama pelatihan. Menyimpan data pelatihan dan
-  menggunakannya untuk mengklasifikasikan data baru saat prediksi.
-- Kelebihan: Cepat dalam prediksi karena tidak memerlukan komputasi tambahan.
-- Kekurangan: Kurang efektif di ruang dimensi tinggi atau dengan data pelatihan besar.
-- Contoh: K-nearest neighbors (KNN), case-based reasoning.
+Tipe pembelajar malas tidak membuat model selama pelatihan. Tipeini menyimpan
+data pelatihan dan menggunakannya untuk mengklasifikasikan data baru saat prediksi.
+Kelebihannya adalah cepat dalam prediksi karena tidak memerlukan komputasi tambahan.
+Kekurangannya adalah kurang efektif di ruang dimensi tinggi atau dengan data
+pelatihan besar. Contoh: K-nearest neighbors (KNN), case-based reasoning.
 
 ###### Pembelajar Antusias (Eager Learners)
 
-- Membuat model dari data pelatihan dan menggunakan model ini untuk
-  mengklasifikasikan data baru saat prediksi.
-- Kelebihan: Lebih efektif di ruang dimensi tinggi dan dengan dataset besar.
-- Kekurangan: Membutuhkan waktu pelatihan lebih lama.
-- Contoh: decision trees, random forests, support vector machines (SVM).
+Tipe pembelajar ini membuat model dari data pelatihan dan menggunakan model ini untuk
+mengklasifikasikan data baru saat prediksi. Kelebihannya adalah lebih efektif di
+ruang dimensi tinggi dan dengan dataset besar. Kekurangannya adalah membutuhkan waktu pelatihan lebih lama. Contoh: decision trees, random forests, support vector machines (SVM).
 
 ##### Evaluasi Model Klasifikasi
 
@@ -228,21 +226,21 @@ algoritma klasifikasi non-linear adalah:
   - AUC: Luas di bawah kurva ROC, mengukur kinerja keseluruhan model.
 - Cross-Validation: Teknik membagi data menjadi beberapa lipatan untuk estimasi kinerja model yang lebih robust.
 
-## Karakteristik Klasifikasi
+##### Karakteristik Klasifikasi
 
 - Variabel Target Kategorikal: Memprediksi variabel target yang berupa kelas diskret. Contoh: klasifikasi email spam, prediksi risiko penyakit.
 - Akurasi dan Tingkat Kesalahan: Diukur dengan akurasi, presisi, recall, dan F1-score.
 - Kompleksitas Model: Berkisar dari model linier sederhana hingga model non-linier yang lebih kompleks.
 - Overfitting dan Underfitting: Model harus dihindari dari overfitting (terlalu cocok dengan data pelatihan) dan underfitting (tidak cukup cocok dengan data pelatihan).
 
-## Proses Klasifikasi
+##### Tahapan Klasifikasi
 
 1. Pemahaman Masalah: Identifikasi label kelas dan hubungan antara data input dan label kelas.
 2. Persiapan Data: Pengumpulan, pembersihan, dan pemisahan data menjadi set pelatihan, validasi, dan pengujian.
 3. Ekstraksi Fitur: Pilih fitur relevan yang mempengaruhi label atau target.
 4. Pemilihan Model: Pilih model yang sesuai berdasarkan ukuran dan kompleksitas data, serta sumber daya komputasi.
 5. Pelatihan Model: Sesuaikan parameter model untuk meminimalkan kesalahan antara label kelas yang diprediksi dan yang sebenarnya.
-6. Evaluasi Model: Gunakan metrik seperti Log Loss, matriks kebingungan, presisi, recall, dan AUC-ROC.
+6. Evaluasi Model: Gunakan metrik seperti Log Loss, confusion matrix, presisi, recall, dan AUC-ROC.
 7. Penyetelan Model: Sesuaikan parameter atau coba model berbeda jika kinerja tidak memuaskan.
 8. Penerapan Model: Terapkan model untuk prediksi data baru dan aplikasi dunia nyata.
 
