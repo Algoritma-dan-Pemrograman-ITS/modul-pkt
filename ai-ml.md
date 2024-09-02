@@ -560,7 +560,7 @@ Dalam teknik deep learning, metode deteksi objek dibagi menjadi 2 jenis, yaitu:
 2. SSD: arsitektur object detection yang menggunakan feature map dari layer-layer
    CNN untuk mendeteksi objek dalam skala-skala yang berbeda. Bekerja dengan cepat
    dan hanya menggunakan 1 fase saja.
-   
+
 ###### Two Stage Detectors
 
 1. R-CNN: Teknik ini menggunakan algoritma selective search untuk menghasilkan 2000 proposal wilayah dari gambar, kemudian wilayah yang diusulkan diubah ukurannya dan dilewatkan melalui model CNN yang telah dilatih untuk mengekstraksi vektor fitur. Vektor fitur ini kemudian dimasukkan ke dalam classifier untuk mengklasifikasikan objek dalam wilayah tersebut.
@@ -576,7 +576,94 @@ Dalam teknik deep learning, metode deteksi objek dibagi menjadi 2 jenis, yaitu:
 
 ## Semi-supervised
 
+Semi-supervised learning adalah paradigma machine learning yang menggunakan
+data berlabel dan data tidak berlabel. Dengan menggunakan data berlabel dan tidak
+berlabel, model yang dihasilkan bisa belajar dari pola yang ada dengan berbagai
+macam teknik. Contoh teknik-teknik tersebut adalah:
+
+- Self-training: menggunakan hubungan dari data berlabel untuk melakukan pseudo-labeling pada
+  data tidak berlabel dan dilakukan iterasi.
+- Co-training: menggunakan banyak model yang dilatih pada kumpulan fitur yang berbeda, dan
+  hasil pseudo-labeling yang bersifat _high agreement_ di antara model-model itu akan
+  disimpan.
+- Multiview training: model-model dilatih pada berbagai representasi data dari data yang sama.
+- Generative model: Meng-generate data sintetis dengan bantuan model generative seperti GAN
+  untuk dikombinasikan dengan data riil.
+- Transfer learning: melakukan pre-training model dengan data berlabel yang berlimpah lalu
+  melakukan fine tuning untuk tujuan tertentu dengan data berlabel yang terbatas.
+
 ### LLM (Large Language Model)
+
+LLM atau _large language model_ adalah adalah jenis algoritma kecerdasan buatan yang menerapkan teknik Neural Network dengan banyak parameter untuk memproses dan memahami bahasa manusia atau teks menggunakan teknik self-learning. Tugas seperti pembuatan teks, penerjemahan mesin, penulisan ringkasan, pembuatan gambar dari teks, pengkodean mesin, chatbot, atau Conversational AI adalah aplikasi dari LLM. Contoh model LLM adalah Chat GPT oleh OpenAI, BERT (Bidirectional Encoder Representations from Transformers) oleh Google, dll.
+
+Banyak teknik yang telah dicoba untuk melakukan tugas terkait bahasa alami, tetapi LLM sepenuhnya didasarkan pada metodologi deep learning. Model LLM sangat efisien dalam menangkap hubungan entitas yang kompleks dalam teks dan dapat menghasilkan teks menggunakan semantik dan sintaksis dari bahasa tertentu yang ingin digunakan.
+
+### Gambaran Model LLM
+
+Perkembangan LLM sepanjang waktu dapat dilihat dari perkembangan kemampuan dan
+kapabilitas model, seiring dengan peningkatan jumlah dan mutu data yang tersedia
+untuk dijadikan dataset training LLM:
+
+- GPT-1 yang dirilis pada tahun 2018 mengandung 117 juta parameter dengan 985 juta kata.
+- GPT-2 yang dirilis pada tahun 2019 mengandung 1,5 miliar parameter.
+- GPT-3 yang dirilis pada tahun 2020 mengandung 175 miliar parameter.
+- Model GPT-4 dirilis pada tahun 2023 dan mengandung triliunan parameter.
+
+### Bagaimana LLM Bekerja?
+
+Model Bahasa Besar (LLM) beroperasi berdasarkan prinsip deep learning, memanfaatkan arsitektur Neural Network untuk memproses dan memahami bahasa manusia.
+
+Model ini dilatih pada dataset yang sangat besar menggunakan teknik self-learning. Inti dari fungsionalitas mereka terletak pada pola dan hubungan rumit yang mereka pelajari dari data bahasa yang beragam selama pelatihan. LLM terdiri dari beberapa lapisan, termasuk lapisan feedforward, lapisan embedding, dan lapisan attention. Mereka menggunakan mekanisme attention, seperti Self-Attention, untuk menimbang pentingnya token yang berbeda dalam sebuah urutan, memungkinkan model untuk menangkap ketergantungan dan hubungan.
+
+### Arsitektur LLM
+
+Arsitektur Model Bahasa Besar (LLM) ditentukan oleh sejumlah faktor, seperti tujuan desain model tertentu, sumber daya komputasi yang tersedia, dan jenis tugas pemrosesan bahasa yang akan dilakukan oleh LLM. Arsitektur umum LLM terdiri dari banyak lapisan seperti lapisan feed forward, lapisan embedding, dan lapisan attention. Sebuah teks yang di-embed di dalamnya dikolaborasikan bersama untuk menghasilkan prediksi.
+
+#### Komponen Penting yang Mempengaruhi Arsitektur Model Bahasa Besar:
+
+- Ukuran Model dan Jumlah Parameter
+- Representasi input
+- Mekanisme Self-Attention
+- Tujuan Pelatihan
+- Efisiensi Komputasi
+- Pengodean dan Generasi Output
+
+#### Arsitektur Model LLM Berbasis Transformer
+
+Model berbasis transformer, yang telah merevolusi tugas pemrosesan bahasa alami, umumnya mengikuti arsitektur umum yang mencakup komponen-komponen berikut:
+
+- Input Embeddings: Teks input di-tokenisasi menjadi unit yang lebih kecil, seperti kata atau sub-kata, dan setiap token diembed ke dalam representasi vektor kontinu. Langkah embedding ini menangkap informasi semantik dan sintaksis dari input.
+- Positional Encoding: Positional encoding ditambahkan ke input embeddings untuk memberikan informasi tentang posisi token karena transformer secara alami tidak mengkode urutan token. Ini memungkinkan model memproses token sambil mempertimbangkan urutan berurutan mereka.
+- Encoder: Berdasarkan teknik Neural Network, encoder menganalisis teks input dan menciptakan sejumlah hidden state yang melindungi konteks dan makna data teks. Beberapa lapisan encoder membentuk inti dari arsitektur transformer. Mekanisme Self-Attention dan Neural Network feed-forward adalah dua sub-komponen fundamental dari setiap lapisan encoder.
+  - Mekanisme Self-Attention: Self-Attention memungkinkan model untuk menimbang pentingnya token yang berbeda dalam urutan input dengan menghitung skor perhatian. Ini memungkinkan model mempertimbangkan ketergantungan dan hubungan antara token yang berbeda secara kontekstual.
+  - Neural Network Feed-Forward: Setelah langkah Self-Attention, Neural Network feed-forward diterapkan pada setiap token secara independen. Jaringan ini mencakup lapisan fully connected dengan fungsi aktivasi non-linear, memungkinkan model menangkap interaksi kompleks antar token.
+- Decoder Layers: Dalam beberapa model berbasis transformer, komponen decoder disertakan selain encoder. Lapisan decoder memungkinkan generasi autoregresif, di mana model dapat menghasilkan output berurutan dengan memperhatikan token yang telah dihasilkan sebelumnya.
+- Multi-Head Attention: Transformer sering menggunakan perhatian multi-head, di mana Self-Attention dilakukan secara bersamaan dengan bobot perhatian yang dipelajari berbeda. Ini memungkinkan model menangkap berbagai jenis hubungan dan memperhatikan berbagai bagian urutan input secara bersamaan.
+- Layer Normalization: Normalisasi lapisan diterapkan setelah setiap sub-komponen atau lapisan dalam arsitektur transformer. Ini membantu menstabilkan proses pembelajaran dan meningkatkan kemampuan model untuk menggeneralisasi di berbagai input.
+- Output Layers: Lapisan output dari model transformer dapat bervariasi tergantung pada tugas spesifik. Misalnya, dalam pemodelan bahasa, proyeksi linier diikuti oleh aktivasi SoftMax biasanya digunakan untuk menghasilkan distribusi probabilitas atas token berikutnya.
+
+Penting untuk diingat bahwa arsitektur sebenarnya dari model berbasis transformer dapat berubah dan ditingkatkan berdasarkan penelitian dan kreasi model tertentu. Untuk memenuhi berbagai tugas dan tujuan, beberapa model seperti GPT, BERT, dan T5 dapat mengintegrasikan lebih banyak komponen atau modifikasi.
+
+### Contoh LLM
+
+LLM-LLM berikut adalah beberapa dari jenis LLM yang populer digunakan:
+
+- GPT-3: GPT merupakan singkatan dari Generative pre-trained Transformer dan ini adalah versi ketiga dari model tersebut, oleh karena itu diberi nomor 3. Ini dikembangkan oleh OpenAI dan Anda pasti pernah mendengar tentang Chat GPT yang diluncurkan oleh OpenAI dan merupakan model GPT-3.
+- BERT: Singkatan dari Bidirectional Encoder Representations from Transformers. Model bahasa besar ini dikembangkan oleh Google dan umumnya digunakan untuk berbagai tugas terkait bahasa alami. Selain itu, model ini dapat digunakan untuk menghasilkan embedding untuk teks tertentu mungkin untuk melatih model lain.
+- RoBERTa: Singkatan dari Robustly Optimized BERT Pretraining Approach. Dalam upaya untuk meningkatkan kinerja arsitektur transformer, RoBERTa adalah versi peningkatan dari model BERT yang dikembangkan oleh Facebook AI Research.
+- BLOOM: Ini adalah LLM multibahasa pertama yang dihasilkan oleh asosiasi berbagai organisasi dan peneliti yang menggabungkan keahlian mereka untuk mengembangkan model ini yang mirip dengan arsitektur GPT-3.
+
+![gpt](img/chatgpt.jpeg)
+![bert](img/bert.jpg)
+![roberta](img/roberta.png)
+![bloom](img/bloom.jpg)
+
+### Penggunaan LLM
+
+- Pembuatan Kode: Salah satu kasus penggunaan yang paling luar biasa adalah bahwa LLM dapat menghasilkan kode yang cukup akurat untuk tugas spesifik yang dijelaskan oleh pengguna kepada model.
+- Debugging dan Dokumentasi Kode: Jika mengalami kesulitan dengan beberapa bagian kode terkait cara mendebug-nya, maka ChatGPT dapat memberi tahu baris kode yang menimbulkan masalah beserta solusinya. Selain itu, ChatGPT juga bisa menuliskan dokumentasi untuk kode program.
+- Menjawab Pertanyaan: ChatGPT bisa dijadikan seperti search engine yang lebih canggih dan mengerti konteks, tidak seperti search engine Google, Bing, dan sebagainya.
+- Penerjemahan Bahasa: LLM dapat mengonversi teks dari satu bahasa ke bahasa lain jika dibuat dengan kapabilitas tersebut. Beberapa LLM juga dapat membantu memperbaiki kesalahan tata bahasa dalam teks yang pengguna tulis.
 
 # Referensi
 
