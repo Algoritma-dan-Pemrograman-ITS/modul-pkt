@@ -61,36 +61,29 @@
 
 ## Siang: Forecasting
 
-- Forecasting
+- Forecasting Dasar
     - Perbandingan library forecasting (skforecast, scalecast, nixtla, darts, etc)
     - Perbandingan model statistik, machine learning, dan deep learning untuk forecasting
-        - Hubungan regresi dengan forecasting
-    - Teknik forecasting lanjutan
-        - Local dan Global model
-        - Transfer learning dalam forecasting
-        - Hybrid modeling
-        - Zero-shot forecasting
+    - Hubungan regresi dengan forecasting
 
 # Hari ke-4
 
-## Pagi: Overview Generative AI dan LLM
+## Pagi: Advanced Forecasting, 
+- Teknik forecasting lanjutan
+  - Local dan Global model
+  - Hybrid modeling
+  - Transfer learning dalam forecasting
+  - Zero-shot forecasting
 
+## Siang: Overview Generative AI dan LLM
 - Overview Generative AI
     - Contoh Aplikasi pada data tabular, gambar, dan teks
 - Overview Large Language Models (LLM)
 
-## Siang: Pemanfaatan LLM untuk Topic Modeling
-
-- Pemrosesan Teks dan Topic Modeling dengan BERTopic
-    - Text preprocessing: lowercasing, tokenization, stopwords removal, stemming, lemmatization, etc
-    - Pengenalan BERT dan transformer models
-    - Implementasi BERTopic untuk topic modeling
-
 # Hari ke-5
 
 ## Pagi: Menjalankan LLM Sendiri untuk Use Case Specific
-
-- Ollama, LangChain, & Open Web UI
+- Ollama, LangChain
     - Setup dan Instalasi
     - Membuat custom prompt dan instruction
     - Menambah pengetahuan LLM dari dokumen
