@@ -242,10 +242,20 @@ ruang dimensi tinggi dan dengan dataset besar. Kekurangannya adalah membutuhkan 
 - Cross-Validation: Teknik membagi data menjadi beberapa lipatan untuk estimasi kinerja model yang lebih robust.
 
 ![conf. matrix](img/confusion-matrix.webp)
+
+
 ![conf. matrix 2](img/confusion-matrix2.webp)
+
+
 ![accuracy](img/accuracy.webp)
+
+
 ![precision](img/precision.webp)
+
+
 ![recall](img/recall.webp)
+
+
 ![f1-score](img/f1-score.webp)
 
 Sumber: https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd
