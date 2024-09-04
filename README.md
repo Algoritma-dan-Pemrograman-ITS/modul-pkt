@@ -8,61 +8,58 @@
 
 ## Materi 2: Dasar-dasar AI dan Machine Learning
 - Overview AI dan ML
-    - Unsupervised
-        - Clustering
-    - Supervised
-        - Klasifikasi
-        - Regresi
-        - Time Series Forecasting
-        - Object Detection
-    - LLM
+- Unsupervised
+    - Clustering
+- Supervised
+    - Klasifikasi
+    - Regresi
 
 ## Materi 3: Clustering
-- Algoritma-algoritma
-    - Implementasi
-    - Evaluasi
-
-## Materi 4: Klasifikasi
-- Algoritma-algoritma (Decision Tree, Random Forest, SVC, etc)
+- Pengenalan Algoritma: K-Means dan DBScan
 - Implementasi
 - Evaluasi
-- Reduksi Dimensi dan Feature Importance
 
-## Materi 5: Regresi
-- Algoritma-algoritma (Linear Regression, Polynomial Regression, Ridge, Lasso, etc)
+## Materi 4: Klasifikasi
+- Pengenalan Algoritma: Decision Tree, Random Forest, SVC, Logistic Regression
 - Implementasi
 - Evaluasi
 - Feature Importance
 
+## Materi 5: Regresi
+- Pengenalan Algoritma: Linear Reg., Support Vector Reg., Random Forest Reg., Gradient Boosting Reg.
+- Implementasi
+- Evaluasi
+- Feature Importance
+- Transformasi: Tanpa Normalisasi, Standard Scaling, Min-Max Scaling
+
 ## Materi 6: Overview Deep Learning
-- Arsitektur-arsitektur dasar neural network
-- Aplikasi pada data tabular, gambar, dan teks
+- Arsitektur Dasar Neural Network
+- Implementasi berbasis citra (YOLO)
 - Referensi untuk pembelajaran lanjutan
 
 ## Materi 7: Basic Forecasting
-- Perbandingan library forecasting (skforecast, scalecast, nixtla, darts, etc)
-- Perbandingan model statistik, machine learning, dan deep learning untuk forecasting
+- Pengenalan Algoritma: AutoARIMA, Gradient Boosting Regressor
+- Penggunan pipeline library untuk forecasting: Pycarets Regression
+- Perbandingan model statistik, machine learning berdasarkan studi kasus (peramalan harga pupuk dunia)
 - Hubungan regresi dengan forecasting
 
 ## Materi 8: Advanced Forecasting
-- Local dan Global model
-- Hybrid modeling
-- Transfer learning dalam forecasting
-- Zero-shot forecasting
+- Studi Kasus di PKT
+- Recursive Multi-Step Forecasting
+- Zero-shot forecasting: Amazon Chronos
+- Ensemble Learning via PyCarets
+/* - Transfer learning dalam Forecasting: Local vs. Global */
 
-## Materi 9: Overview Generative AI dan LLM
+## Materi 9: Overview Generative AI
 - Overview Generative AI
-- Overview Large Language Models (LLM)
+- Demonstrasi: Stable Diffusion
 
 ## Materi 10: Praktik LLM untuk Use Case Specific
-- Ollama, LangChain
-- Setup dan Instalasi
-- Membuat custom prompt dan instruction
-- Menambah pengetahuan LLM dari dokumen
-- Fine-tuning & Retrieval-Augmented Generation (RAG)
+- Overview Large Language Models (LLM): Ollama, LangChain
+- Panduan Setup dan Instalasi
+- Menambah pengetahuan LLM dari dokumen: Retrieval-Augmented Generation (RAG)
 
 ## Wrap-up
+- Deployment di HuggingFace
 - Review materi keseluruhan
 - Diskusi case study
-- Q&A session
-- Penutupan dan rekomendasi pembelajaran lanjutan
