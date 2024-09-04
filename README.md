@@ -33,12 +33,12 @@
 - Transformasi: Tanpa Normalisasi, Standard Scaling, Min-Max Scaling
 
 ## Materi 6: Overview Deep Learning
-- Arsitektur Dasar Neural Network
-- Implementasi berbasis citra (YOLO)
+- [Arsitektur Dasar Neural Network](https://playground.tensorflow.org)
+- Implementasi berbasis citra ([YOLO](https://colab.research.google.com/drive/1F5aJXRLt9nZHFem_rIYz6TSMqPdQQh1x?usp=sharing) dan [Roboflow](https://universe.roboflow.com/computer-vision-8kpih/synapsis-ppe/dataset/513))
 - Referensi untuk pembelajaran lanjutan
 
 ## Materi 7: Basic Forecasting
-- Pengenalan Algoritma: AutoARIMA, Gradient Boosting Regressor
+- Pengenalan Algoritma: AutoARIMA, [Tree-Based Regressor](http://www.saedsayad.com/decision_tree_reg.htm)
 - Penggunan pipeline library untuk forecasting: Pycarets Regression
 - Perbandingan model statistik, machine learning berdasarkan studi kasus (peramalan harga pupuk dunia)
 - Hubungan regresi dengan forecasting
