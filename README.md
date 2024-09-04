@@ -48,7 +48,6 @@
 - Recursive Multi-Step Forecasting
 - Zero-shot forecasting: Amazon Chronos
 - Ensemble Learning via PyCarets
-/* - Transfer learning dalam Forecasting: Local vs. Global */
 
 ## Materi 9: Overview Generative AI
 - Overview Generative AI
